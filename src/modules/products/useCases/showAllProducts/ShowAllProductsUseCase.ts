@@ -1,7 +1,9 @@
 import { inject, injectable } from "tsyringe";
+import { getRepository } from "typeorm";
 
 
 import { IProductsRepository } from "../../../products/repositories/IProductsRepository";
+
 
 @injectable()
 export class ShowAllProductsUseCase {

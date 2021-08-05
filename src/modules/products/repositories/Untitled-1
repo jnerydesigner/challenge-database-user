@@ -1,0 +1,48 @@
+[
+  {
+    "id": 2,
+    "name": "Seleta de Legumes",
+    "perishableProduct": false,
+    "manufacturingDate": "2021-08-05T15:13:58.954Z",
+    "expirationDate": "2021-08-05T15:13:58.954Z",
+    "price": "1.50"
+  },
+  {
+    "id": 1,
+    "name": "Feijão Mexicano saltitante",
+    "perishableProduct": true,
+    "manufacturingDate": "2021-08-05T15:12:59.828Z",
+    "expirationDate": "2021-08-05T15:12:59.828Z",
+    "price": "2.20"
+  },
+  {
+    "id": 3,
+    "name": "Milho Verde lata",
+    "perishableProduct": false,
+    "manufacturingDate": "2021-08-05T15:37:20.471Z",
+    "expirationDate": "2021-08-05T15:37:20.471Z",
+    "price": "2.20"
+  },
+  {
+    "id": 6,
+    "name": "Arroz S'grãos",
+    "perishableProduct": false,
+    "manufacturingDate": "2021-08-05T15:55:38.281Z",
+    "expirationDate": "2021-08-05T15:55:38.281Z",
+    "price": "6.00"
+  },
+  {
+    "id": 7,
+    "name": "Arroz S'grãos",
+    "perishableProduct": false,
+    "manufacturingDate": "2021-08-05T16:53:10.719Z",
+    "expirationDate": "2021-08-05T16:53:10.719Z",
+    "price": "6.34"
+  },
+  contents: {
+    totalRows: 20,
+    totalPages:10,
+    prevPage: http://seudominio/products?prevPage=1,
+    nextPage: http://seudominio/products?nextPage=3,
+  }
+]

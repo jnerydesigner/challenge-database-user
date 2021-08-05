@@ -2,7 +2,7 @@ import { getRepository, Repository, getCustomRepository } from "typeorm";
 
 import { Product } from "../entities/Product";
 import { GeneralProductError } from "../errors/GeneralProductError";
-import { IProductDTO } from "../dto/ProductDTO";
+import { IProductDTO, IProductArrayDTO } from "../dto/ProductDTO";
 
 
 import { IProductsRepository } from "./IProductsRepository";
@@ -15,8 +15,24 @@ export class ProductsRepository implements IProductsRepository {
   }
 
 
-  async index(): Promise<Product[]> {
-    return this.product.find();
+  async index(): Promise<Product[] | IProductArrayDTO> {
+    const products = await this.product.createQueryBuilder('products').take(5).getMany();
+
+    const totalRecords = 10;
+    const Product = products.map(product => {
+      return {
+        ...product
+      }
+    })
+
+    const totalRegisters = {
+      Product,
+      totalRecords
+    }
+
+    console.log(totalRegisters)
+
+    return totalRegisters;
   }
 
   async show(id: number): Promise<Product> {

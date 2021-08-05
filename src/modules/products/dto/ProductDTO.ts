@@ -7,3 +7,8 @@ export interface IProductDTO {
   price: Number;
 }
 
+export interface IProductArrayDTO {
+  Product: IProductDTO[];
+  totalRecords?: number;
+}
+
