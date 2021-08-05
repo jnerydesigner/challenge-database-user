@@ -12,6 +12,7 @@ export class ShowCategoryUseCase {
   ) { }
 
 
+
   async execute() {
     return await this.categoryRepository.index();
   }

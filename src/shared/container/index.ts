@@ -9,6 +9,9 @@ import { StatementsRepository } from '../../modules/statements/repositories/Stat
 import { ICategoryRepository } from '../../modules/categories/repositories/ICategoriesRepository';
 import { CategoriesRepository } from '../../modules/categories/repositories/CategoriesRepository';
 
+import { IProductsRepository } from '../../modules/products/repositories/IProductsRepository';
+import { ProductsRepository } from '../../modules/products/repositories/ProductsRepository';
+
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository
@@ -22,4 +25,9 @@ container.registerSingleton<IStatementsRepository>(
 container.registerSingleton<ICategoryRepository>(
   'CategoriesRepository',
   CategoriesRepository
+);
+
+container.registerSingleton<IProductsRepository>(
+  'ProductsRepository',
+  ProductsRepository
 );
