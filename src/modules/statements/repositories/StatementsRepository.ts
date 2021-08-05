@@ -13,6 +13,7 @@ export class StatementsRepository implements IStatementsRepository {
     this.repository = getRepository(Statement);
   }
 
+
   async create({
     user_id,
     amount,

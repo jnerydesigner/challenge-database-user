@@ -1,12 +1,13 @@
 import {
   Column,
   CreateDateColumn,
+  UpdateDateColumn,
   Entity,
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn
 } from 'typeorm';
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid, v1 } from 'uuid';
 
 import { User } from '../../users/entities/User';
 
@@ -39,7 +40,7 @@ export class Statement {
   @CreateDateColumn()
   created_at: Date;
 
-  @CreateDateColumn()
+  @UpdateDateColumn()
   updated_at: Date;
 
   constructor() {
