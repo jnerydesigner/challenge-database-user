@@ -1,10 +1,4 @@
-<div align="center" id="top">
-  <img src="./.github/app.gif" alt="Gen_products_api" />
-
-&#xa0;
-
-  <!-- <a href="https://gen_products_api.netlify.app">Demo</a> -->
-</div>
+![Banner Github Explorer](https://github.com/jnerydesigner/challenge-database-user/blob/main/src/assets/code.jpeg)
 
 <h1 align="center">Gen_products_api</h1>
 
