@@ -4,13 +4,13 @@
 <h1 align="center">Gen_products_api</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/gen_products_api?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/jnerdesigner/gen_products_api?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/gen_products_api?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/jnerdesigner/gen_products_api?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/gen_products_api?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/jnerdesigner/gen_products_api?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/gen_products_api?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/jnerdesigner/gen_products_api?color=56BEB8">
 
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/gen_products_api?color=56BEB8" /> -->
 
@@ -34,20 +34,60 @@
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/jnerdesigner" target="_blank">Author</a>
 </p>
 
 <br>
 
 ## :dart: About
 
-Describe your project
+Projeto de criação de uma API feita com o NodeJs de Produtos e Categorias.
+
+## The Project
+
+Desenvolver uma API RESTfull utilizando nodejs e banco de dados relaciona. Cada produto deve pertencer a uma categoria pré registrada no sistema.
 
 ## :sparkles: Features
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+### Funcionalidades
+
+- Usuários
+  - [x] (store) Cadastrar Usuário
+  - [x] (login) Login de usuário retornando um bearer token para utilizar nas chamadas abaixo
+- Categorias
+  - [x] (store) Cadastrar categoria
+  - [x] (update) Atualizar categoria
+  - [x] (delete) Remover categoria
+  - [x] (show) Exibir Categoria
+  - [x] (index) Listar categorias
+- Produtos
+  - [x] (store) Cadastrar produto
+  - [x] (update) Atualizar produto
+  - [x] (delete) Remover produto
+  - [x] (show) Exibir produto
+  - [x] (index) Listar produtos
+    - [x] Filtrar por categorias
+
+### Exemplo de Produto
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e0dd1ac-c476-466e-937d-63f3c620dc9a/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e0dd1ac-c476-466e-937d-63f3c620dc9a/Untitled.png)
+
+### Retorno Alcançado
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e859a35d-225d-46df-b8de-229b78cfd9ca/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e859a35d-225d-46df-b8de-229b78cfd9ca/Untitled.png)
+
+### Regras de negócio
+
+- [x] A data de fabricação nunca deve ser maior que a data de validade;
+- [x] O Preço do produto deverá ser registrado com 2 casas decimais;
+- [x] A listagem deve ter a possibilidade de ordenação dos campos e com uma paginação
+      de 10 produtos por página.
+
+### Diferenciais
+
+- [ ] Utilizar testes unitários e de integração;
+- [x] Documentação dos endpoints da API - Por partes;
+- [ ] Front-end é opcional.
 
 ## :rocket: Technologies
 
