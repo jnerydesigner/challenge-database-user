@@ -18,6 +18,7 @@ export class CreateProductUseCase {
       throw new GeneralProductError.ManufacturingDateMustNotBeGreaterThanExpirationDate();
     }
 
+
     return await this.productRepository.store({
       name,
       manufacturingDate,

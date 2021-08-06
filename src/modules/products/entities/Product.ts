@@ -7,20 +7,20 @@ export class Product {
   id?: number;
 
   @Column()
+  categoryId: number;
+
+  @Column()
   name: string;
 
   @Column()
-  categoryId: number;
-
-  @ManyToOne(() => Category, (category: Category) => category.products)
-  @JoinColumn()
-  category: Category;
+  manufacturingDate: Date;
 
   @Column()
   perishableProduct: boolean;
 
-  @Column()
-  manufacturingDate: Date;
+  @ManyToOne(() => Category, (category: Category) => category.products)
+  @JoinColumn()
+  category: Category;
 
   @Column()
   expirationDate: Date;

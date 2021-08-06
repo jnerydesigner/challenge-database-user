@@ -7,5 +7,6 @@ export interface IProductsRepository {
   update: (id: number, data: IProductDTO) => Promise<Product>;
   delete: (id: number) => Promise<void>;
   show: (id: number) => Promise<Product>;
+  categoryIdProduct: (id: number) => Promise<Product>;
   filterByCategoryId: (page: number, id: number) => Promise<Product[] | IProductArrayDTO>;
 }

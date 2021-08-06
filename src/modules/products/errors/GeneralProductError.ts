@@ -13,6 +13,12 @@ export namespace GeneralProductError {
     }
   }
 
+  export class ProductCategoriNotExist extends AppError {
+    constructor() {
+      super('Category not exist on Database', 404);
+    }
+  }
+
   export class ManufacturingDateMustNotBeGreaterThanExpirationDate extends AppError {
     constructor() {
       super('Manufacturing date must not be greater than expiration date', 404);

@@ -5,6 +5,9 @@ import express from 'express';
 import cors from 'cors';
 import { pagination } from 'typeorm-pagination'
 
+import swaggerUi from 'swagger-ui-express';
+import swaggerFile from './swagger.json';
+
 import './database';
 import './shared/container';
 import { router } from './routes';
@@ -16,7 +19,11 @@ app.use(cors());
 app.use(express.json());
 app.use(pagination);
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+
+
 app.use('/api/v1', router);
+
 
 app.use(
   (err: Error, request: express.Request, response: express.Response, _next: express.NextFunction) => {

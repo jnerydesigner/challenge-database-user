@@ -4,7 +4,7 @@ export interface IProductDTO {
   perishableProduct: boolean;
   manufacturingDate: Date;
   expirationDate: Date;
-  price: Number;
+  price: number;
   categoryId?: number;
 }
 

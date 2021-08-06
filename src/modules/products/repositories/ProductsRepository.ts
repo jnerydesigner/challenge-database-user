@@ -14,6 +14,16 @@ export class ProductsRepository implements IProductsRepository {
     this.product = getRepository(Product);
   }
 
+  async categoryIdProduct(id: number): Promise<Product> {
+    const product = await this.product.findOne({
+      categoryId: id
+    });
+    if (!product) {
+      throw new GeneralProductError.VerifyExixtentsProducts();
+    }
+    return product;
+  }
+
 
   async index(page: number = 1): Promise<Product[] | IProductArrayDTO> {
     const totalRecordsPerPage = 5;
@@ -55,10 +65,13 @@ export class ProductsRepository implements IProductsRepository {
     return totalRegisters;
   }
 
-  async filterByCategoryId(page: number = 1, id: number): Promise<Product[] | IProductArrayDTO> {
+  async filterByCategoryId(page: number = 1, categoryId: number): Promise<Product[] | IProductArrayDTO> {
     const totalRecordsPerPage = 5;
-    const totalRecords = await this.product.count();
+    const totalRecords = await this.product.count({
+      where: { categoryId: categoryId }
+    });
     const totalPages = Math.round(totalRecords / totalRecordsPerPage);
+
 
     let currentPage = page === 1 ? 1 : page;
 
@@ -68,11 +81,13 @@ export class ProductsRepository implements IProductsRepository {
       currentPage = 1;
     }
 
+    const beginAfter = (totalRecordsPerPage * currentPage) - totalRecordsPerPage;
 
-    const begin = (totalRecordsPerPage * currentPage) - totalRecordsPerPage;
+    const begin = (beginAfter < 0) ? 0 : beginAfter;
 
 
     let products = await this.product.createQueryBuilder('products')
+      .where("products.categoryId = :categoryId", { categoryId: categoryId })
       .limit(totalRecordsPerPage)
       .orderBy("id")
       .offset(begin)

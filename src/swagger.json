@@ -1,0 +1,151 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Generate Api products",
+    "description": "This is as API Products",
+    "version": "1.0.0",
+    "contact": {
+      "email": "jander.webmaster@gmail.com"
+    }
+  },
+  "paths": {
+    "/api/v1/categories":{
+      "post": {
+        "tags":["Category"],
+        "summary": "Create a category",
+        "description": "Creation a new category",
+        "requestBody":{
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Category",
+                "example": {
+                  "name": "category name sample",
+                  "description": "category description sample",
+                  "slug": "category slug sample"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category alread exists"
+          }
+        }
+      },
+      "get":{
+        "tags":["Category"],
+        "summary": "List all categories",
+        "description": "List all categories",
+        "responses": {
+          "200":{
+            "description": "Success",
+            "content": {
+              "application/json":{
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name":{
+                        "type":"string"
+                      },
+                      "description":{
+                        "type": "string"
+                      },
+                      "slug": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/products":{
+      "post":{
+        "tags":["Products"],
+        "summary": "Create a product",
+        "description": "Creation a new product",
+        "requestBody":{
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Product",
+                "example": {
+                  "name": "Arroz S'grãos",
+                  "perishableProduct": false,
+                  "manufacturingDate": "2021-08-06T02:55:48.216Z",
+                  "expirationDate": "2021-08-06T02:55:48.216Z",
+                  "price": 7.00,
+                  "categoryId": 11
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Product alread exists"
+          }
+        }
+      }
+    }
+
+  },
+  "components": {
+    "schemas": {
+      "Category":{
+        "type":"object",
+        "properties":{
+          "name":{
+            "type":"string"
+          },
+          "description":{
+            "type":"string"
+          },
+          "slug":{
+            "type":"string"
+          }
+        }
+      },
+      "Product":{
+        "type":"object",
+        "properties":{
+          "name":{
+            "type":"string"
+          },
+          "perishableProduct":{
+            "type":"boolean"
+          },
+          "manufacturingDate":{
+            "type":"string"
+          },
+          "expirationDate":{
+            "type":"string"
+          },
+          "price":{
+            "type":"number"
+          },
+          "categoryId": {
+            "type":"number"
+          }
+
+        }
+      }
+    }
+  }
+
+}
