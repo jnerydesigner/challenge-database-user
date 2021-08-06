@@ -23,8 +23,14 @@ export class CategoriesRepository implements ICategoryRepository {
 
 
 
-  async findBySlugCategory(slug: string): Promise<Category | undefined> {
+  async findByCategorySlug(slug: string): Promise<Category | undefined> {
     const category = await this.category.findOne({ where: { slug: slug } });
+
+    return category;
+  }
+
+  async findByCategoryId(id: number): Promise<Category | undefined> {
+    const category = await this.category.findOne({ where: { id: id } });
 
     return category;
   }

@@ -15,7 +15,7 @@ export class CreateCategoryUseCase {
   async execute({ name, description }: ICreateCategoryDTO) {
     const slug: string = slugName(name);
 
-    const verifyCategoryExists = await this.categoryRepository.findBySlugCategory(slug);
+    const verifyCategoryExists = await this.categoryRepository.findByCategorySlug(slug);
     console.log(verifyCategoryExists)
 
     if (verifyCategoryExists) {

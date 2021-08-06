@@ -14,17 +14,6 @@ export class ProductsRepository implements IProductsRepository {
     this.product = getRepository(Product);
   }
 
-  async categoryIdProduct(id: number): Promise<Product> {
-    const product = await this.product.findOne({
-      categoryId: id
-    });
-    if (!product) {
-      throw new GeneralProductError.VerifyExixtentsProducts();
-    }
-    return product;
-  }
-
-
   async index(page: number = 1): Promise<Product[] | IProductArrayDTO> {
     const totalRecordsPerPage = 5;
     const totalRecords = await this.product.count();
@@ -163,5 +152,16 @@ export class ProductsRepository implements IProductsRepository {
     }
 
     await this.product.delete(id);
+  }
+
+
+  async categoryIdProduct(id: number): Promise<Product> {
+    const product = await this.product.findOne({
+      categoryId: id
+    });
+    if (!product) {
+      throw new GeneralProductError.VerifyExixtentsProducts();
+    }
+    return product;
   }
 }

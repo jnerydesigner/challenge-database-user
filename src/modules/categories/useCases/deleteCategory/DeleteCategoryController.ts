@@ -14,7 +14,7 @@ export class DeleteCategoryController {
 
 
     return response.status(201).json({
-      message: "Categoria Deletada com sucesso"
+      message: "Category Deleted with success"
     });
   }
 
