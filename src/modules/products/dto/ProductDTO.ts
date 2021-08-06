@@ -5,10 +5,12 @@ export interface IProductDTO {
   manufacturingDate: Date;
   expirationDate: Date;
   price: Number;
+  categoryId?: number;
 }
 
 export interface IProductArrayDTO {
-  Product: IProductDTO[];
+  products: IProductDTO[];
   totalRecords?: number;
+  totalRecordsPerPage?: number;
 }
 

@@ -15,22 +15,82 @@ export class ProductsRepository implements IProductsRepository {
   }
 
 
-  async index(): Promise<Product[] | IProductArrayDTO> {
-    const products = await this.product.createQueryBuilder('products').take(5).getMany();
+  async index(page: number = 1): Promise<Product[] | IProductArrayDTO> {
+    const totalRecordsPerPage = 5;
+    const totalRecords = await this.product.count();
+    const totalPages = Math.round(totalRecords / totalRecordsPerPage);
 
-    const totalRecords = 10;
-    const Product = products.map(product => {
+    let currentPage = page === 1 ? 1 : page;
+
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    } else if (currentPage < 1) {
+      currentPage = 1;
+    }
+
+
+    const begin = (totalRecordsPerPage * currentPage) - totalRecordsPerPage;
+
+
+    let products = await this.product.createQueryBuilder('products')
+      .limit(totalRecordsPerPage)
+      .orderBy("id")
+      .offset(begin)
+      .getMany();
+
+    products = products.map(product => {
       return {
         ...product
       }
     })
 
     const totalRegisters = {
-      Product,
-      totalRecords
+      products,
+      totalRecords,
+      totalRecordsPerPage,
+      totalPages,
+      currentPage
     }
 
-    console.log(totalRegisters)
+    return totalRegisters;
+  }
+
+  async filterByCategoryId(page: number = 1, id: number): Promise<Product[] | IProductArrayDTO> {
+    const totalRecordsPerPage = 5;
+    const totalRecords = await this.product.count();
+    const totalPages = Math.round(totalRecords / totalRecordsPerPage);
+
+    let currentPage = page === 1 ? 1 : page;
+
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    } else if (currentPage < 1) {
+      currentPage = 1;
+    }
+
+
+    const begin = (totalRecordsPerPage * currentPage) - totalRecordsPerPage;
+
+
+    let products = await this.product.createQueryBuilder('products')
+      .limit(totalRecordsPerPage)
+      .orderBy("id")
+      .offset(begin)
+      .getMany();
+
+    products = products.map(product => {
+      return {
+        ...product
+      }
+    })
+
+    const totalRegisters = {
+      products,
+      totalRecords,
+      totalRecordsPerPage,
+      totalPages,
+      currentPage
+    }
 
     return totalRegisters;
   }
@@ -39,19 +99,22 @@ export class ProductsRepository implements IProductsRepository {
     return await this.product.findOneOrFail(id);
   }
 
+
   async store({
     name,
     manufacturingDate,
     expirationDate,
     perishableProduct,
     price,
+    categoryId
   }: IProductDTO): Promise<Product> {
     const product = this.product.create({
       name,
       manufacturingDate,
       expirationDate,
       perishableProduct,
-      price
+      price,
+      categoryId
     });
 
     return this.product.save(product);

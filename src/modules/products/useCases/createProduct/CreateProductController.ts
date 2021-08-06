@@ -6,10 +6,8 @@ import { CreateProductUseCase } from './CreateProductUseCase';
 
 export class CreateProductController {
   async execute(request: Request, response: Response) {
-    const { name, manufacturingDate, expirationDate, perishableProduct, price } = request.body;
+    const { name, manufacturingDate, expirationDate, perishableProduct, price, categoryId } = request.body;
 
-    // price.toString();
-    // console.log(price.toString().match('.'))
 
     const createProduct = container.resolve(CreateProductUseCase);
 
@@ -18,18 +16,9 @@ export class CreateProductController {
       manufacturingDate,
       expirationDate,
       perishableProduct,
-      price
+      price,
+      categoryId
     });
-
-    // const product = {
-    //   name,
-    //   manufacturingDate,
-    //   expirationDate,
-    //   perishableProduct,
-    //   price
-    // };
-
-
 
     return response.status(201).json(product);
   }

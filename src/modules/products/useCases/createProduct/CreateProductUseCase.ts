@@ -13,20 +13,18 @@ export class CreateProductUseCase {
     private productRepository: IProductsRepository,
   ) { }
 
-  async execute({ name, manufacturingDate, expirationDate, perishableProduct, price }: IProductDTO) {
+  async execute({ name, manufacturingDate, expirationDate, perishableProduct, price, categoryId }: IProductDTO) {
     if (manufacturingDate.valueOf() > expirationDate.valueOf()) {
       throw new GeneralProductError.ManufacturingDateMustNotBeGreaterThanExpirationDate();
     }
-
-
-
 
     return await this.productRepository.store({
       name,
       manufacturingDate,
       expirationDate,
       perishableProduct,
-      price
+      price,
+      categoryId
     });
   }
 }

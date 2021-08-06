@@ -6,13 +6,13 @@ import { IProductsRepository } from "../../../products/repositories/IProductsRep
 
 
 @injectable()
-export class ShowAllProductsUseCase {
+export class ShowProductsByCategoryUseCase {
   constructor(
     @inject('ProductsRepository')
     private productRepository: IProductsRepository,
   ) { }
 
-  async execute(page: number) {
-    return await this.productRepository.index(page);
+  async execute(page: number, categoryId: number) {
+    return await this.productRepository.filterByCategoryId(page, categoryId);
   }
 }
