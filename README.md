@@ -1,5 +1,6 @@
-![Banner Github Explorer](https://github.com/jnerydesigner/challenge-database-user/blob/main/src/assets/code.jpeg)
-
+<p align="center">
+   <img src="https://github.com/jnerydesigner/challenge-database-user/blob/main/src/assets/code.jpeg" alt="Banner Github Jander Nery" style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%" />
+</p>
 <h1 align="center">Gen_products_api</h1>
 
 <p align="center">
