@@ -112,17 +112,36 @@ $ cd gen_products_api
 # Install dependencies
 $ yarn
 
-# Run the project
-$ yarn start
+# Run the docker to install the Postgres database
+docker-compose up
 
-# The server will initialize in the <http://localhost:3000>
+or
+
+docker-compose up -d #run in detach mode
+
+# Run the typeorm to install as migrations
+yarn typeorm migration:run
+
+# Run the project
+$ yarn dev
+
+# The server will initialize in the <http://localhost:4444>
+# or
+#change teh port in file .env
 ```
+
+## :checkered_flag: Documentation
+
+- Nota: Tentei fazer toda a documentação dos endpoints, mas não deu tempo, mas algumas foram criadas usando o Swagger
+
+- Só vai rodar se não mudar a porta
+  <a href="http://localhost:4444/api-docs" target="_blank">Documentação</a>
 
 ## :memo: License
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/jnerydesigner" target="_blank">Jander Nery</a>
 
 &#xa0;
 
