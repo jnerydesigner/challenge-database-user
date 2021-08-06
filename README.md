@@ -70,11 +70,11 @@ Desenvolver uma API RESTfull utilizando nodejs e banco de dados relaciona. Cada 
 
 ### Exemplo de Produto
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e0dd1ac-c476-466e-937d-63f3c620dc9a/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e0dd1ac-c476-466e-937d-63f3c620dc9a/Untitled.png)
+![https://github.com/jnerydesigner/challenge-database-user/blob/main/src/assets/tela_cadastro_empresa.png](https://github.com/jnerydesigner/challenge-database-user/blob/main/src/assets/tela_cadastro_empresa.png)
 
 ### Retorno Alcançado
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e859a35d-225d-46df-b8de-229b78cfd9ca/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e859a35d-225d-46df-b8de-229b78cfd9ca/Untitled.png)
+![https://github.com/jnerydesigner/challenge-database-user/blob/main/src/assets/tela_cadastro_minha.png](https://github.com/jnerydesigner/challenge-database-user/blob/main/src/assets/tela_cadastro_minha.png)
 
 ### Regras de negócio
 
