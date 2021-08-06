@@ -7,6 +7,12 @@ export namespace CreateCategoryError {
     }
   }
 
+  export class VerifyExistsCategoryTrue extends AppError {
+    constructor() {
+      super('Category Found', 404);
+    }
+  }
+
   export class VerifyExistsCategoryInDatBase extends AppError {
     constructor() {
       super('Category not exists in Database', 404);

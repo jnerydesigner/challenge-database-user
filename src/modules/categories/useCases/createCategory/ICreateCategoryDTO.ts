@@ -1,6 +1,6 @@
 export interface ICreateCategoryDTO {
   id?: number;
   name: string;
-  slug: string;
+  slug?: string;
   description: string;
 }

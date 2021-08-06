@@ -130,6 +130,11 @@
     "@types/mime" "^1"
     "@types/node" "*"
 
+"@types/slug@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@types/slug/-/slug-5.0.2.tgz#1461545e8c23484fbded34ae6ff647c55cc09f28"
+  integrity sha512-HFyrrOlpdLESwF4iuuoM0v66uo3Wm7R5rD6iZ5Odeej0dhcp1Crx0WaOzhmr19JtzUBr5NPH2JBTwxW4XUlkkg==
+
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/strip-bom/-/strip-bom-3.0.0.tgz#14a8ec3956c2e81edb7520790aecf21c290aebd2"
@@ -2076,6 +2081,11 @@ side-channel@^1.0.4:
     call-bind "^1.0.0"
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
+
+slug@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/slug/-/slug-5.1.0.tgz#8a7e30ca1c3a6dc40cf74e269750913a865edb0b"
+  integrity sha512-IS39jKR6m+puU8zWgH6ruwx1sfzFNJ6Ai5PKIlUqd0X8C3ca7PB49Cvm0uayqgEt1jgaojO2wWEsQJngnh7fDA==
 
 source-map-support@^0.5.12, source-map-support@^0.5.17:
   version "0.5.19"

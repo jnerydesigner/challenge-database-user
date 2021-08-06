@@ -1,4 +1,5 @@
 import { inject, injectable } from "tsyringe";
+import slugName from 'slug';
 
 import { ICategoryRepository } from "../../../categories/repositories/ICategoriesRepository";
 import { CreateCategoryError } from "./CreateCategoryError";
@@ -11,7 +12,16 @@ export class CreateCategoryUseCase {
     private categoryRepository: ICategoryRepository,
   ) { }
 
-  async execute({ name, description, slug }: ICreateCategoryDTO) {
+  async execute({ name, description }: ICreateCategoryDTO) {
+    const slug: string = slugName(name);
+
+    const verifyCategoryExists = await this.categoryRepository.findBySlugCategory(slug);
+    console.log(verifyCategoryExists)
+
+    if (verifyCategoryExists) {
+      throw new CreateCategoryError.VerifyExistsCategoryTrue();
+    }
+
     return await this.categoryRepository.store({
       description: description,
       name: name,

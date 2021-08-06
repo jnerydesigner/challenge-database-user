@@ -6,7 +6,7 @@ import { CreateCategoryUseCase } from './CreateCategoryUseCase';
 
 export class CreateCategoryController {
   async execute(request: Request, response: Response) {
-    const { name, description, slug } = request.body;
+    const { name, description } = request.body;
 
 
     const createCategory = container.resolve(CreateCategoryUseCase);
@@ -14,7 +14,6 @@ export class CreateCategoryController {
     const category = await createCategory.execute({
       name,
       description,
-      slug
     });
 
     return response.status(201).json(category);

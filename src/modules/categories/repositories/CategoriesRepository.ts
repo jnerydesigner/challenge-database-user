@@ -23,11 +23,9 @@ export class CategoriesRepository implements ICategoryRepository {
 
 
 
-  async findBySlugCategory(slug: string): Promise<Category> {
-    const category = await this.category.findOne({ slug });
-    if (!category) {
-      throw new CreateCategoryError.VerifyExistsCategoryInDatBase();
-    }
+  async findBySlugCategory(slug: string): Promise<Category | undefined> {
+    const category = await this.category.findOne({ where: { slug: slug } });
+
     return category;
   }
 
