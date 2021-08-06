@@ -95,6 +95,12 @@ The following tools were used in this project:
 
 - [Node.js](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Postgres](https://www.postgresql.org/)
+- [Docker](https://www.docker.com/)
+
+## :white_check_mark: my notes
+
+- [Link das minhas anotações](https://buttered-goose-171.notion.site/Teste-Dynamox-fde96daac4c8475c9fe858afca5b3d93)
 
 ## :white_check_mark: Requirements
 
