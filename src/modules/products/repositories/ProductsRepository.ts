@@ -28,7 +28,11 @@ export class ProductsRepository implements IProductsRepository {
     }
 
 
-    const begin = (totalRecordsPerPage * currentPage) - totalRecordsPerPage;
+    let begin = (totalRecordsPerPage * currentPage) - totalRecordsPerPage;
+
+    if (begin < 1) {
+      begin = 0
+    }
 
 
     let products = await this.product.createQueryBuilder('products')
@@ -100,7 +104,13 @@ export class ProductsRepository implements IProductsRepository {
   }
 
   async show(id: number): Promise<Product> {
-    return await this.product.findOneOrFail(id);
+    try {
+      const product = await this.product.findOneOrFail(id);
+      return product;
+
+    } catch (err) {
+      throw new GeneralProductError.VerifyExixtentsProducts();
+    }
   }
 
 

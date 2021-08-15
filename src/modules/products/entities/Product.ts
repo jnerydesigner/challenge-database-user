@@ -25,6 +25,12 @@ export class Product {
   @Column()
   expirationDate: Date;
 
+  @Column()
+  imageProduct: string;
+
+  @Column()
+  driverImage: string;
+
   @Column({
     type: 'decimal',
     precision: 5,

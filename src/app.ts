@@ -12,6 +12,7 @@ import './database';
 import './shared/container';
 import { router } from './routes';
 import { AppError } from './shared/errors/AppError';
+import uploadConfig from '../src/config/upload';
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 
 app.use('/api/v1', router);
+app.use('/files', express.static(uploadConfig.uploadsFolder));
 
 
 app.use(

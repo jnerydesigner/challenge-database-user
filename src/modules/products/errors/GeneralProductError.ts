@@ -19,9 +19,9 @@ export namespace GeneralProductError {
     }
   }
 
-  export class ManufacturingDateMustNotBeGreaterThanExpirationDate extends AppError {
+  export class UploadFileNotFound extends AppError {
     constructor() {
-      super('Manufacturing date must not be greater than expiration date', 404);
+      super('Upload File not found', 404);
     }
   }
 }

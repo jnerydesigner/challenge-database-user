@@ -4,8 +4,10 @@ export interface IProductDTO {
   perishableProduct: boolean;
   manufacturingDate: Date;
   expirationDate: Date;
-  price: number;
+  price: Number;
   categoryId?: number;
+  imageProduct?: string;
+  driverImage?: string;
 }
 
 export interface IProductArrayDTO {
