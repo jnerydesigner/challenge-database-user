@@ -1,7 +1,7 @@
 <p align="center">
    <img src="https://github.com/jnerydesigner/challenge-database-user/blob/main/src/assets/code.jpeg" alt="Banner Github Jander Nery" style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%" />
 </p>
-<h1 align="center">Gen_products_api</h1>
+<h1 align="center">API DE PRODUTOS</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/jnerdesigner/gen_products_api?color=56BEB8">
