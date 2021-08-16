@@ -87,7 +87,7 @@ Desenvolver uma API RESTfull utilizando nodejs e banco de dados relaciona. Cada 
 
 - [ ] Utilizar testes unitários e de integração;
 - [x] Documentação dos endpoints da API - Por partes;
-- [ ] Front-end é opcional.
+- [x] Front-end é opcional: Tela Principal, Tela de Cadastro de Produto, Tela de Login, Tela de Upload de Imagem do Produto
 
 ## :rocket: Technologies
 
