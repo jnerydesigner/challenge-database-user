@@ -20,11 +20,6 @@ const showProductByCategoryController = new ShowProductByCategoryController();
 const uploadImageProductController = new UploadImageProductController();
 
 const upload = multer(uploadConfig);
-// categoriesRouter.get('/', (req: Request, res: Response) => {
-//   return res.json({
-//     message: 'Tudo deu certo'
-//   })
-// });
 
 productsRouter.post('/', createProductController.execute);
 productsRouter.get('/', showAllProductsController.execute);

@@ -12,11 +12,6 @@ const showCategorysController = new ShowCategorysController();
 const updateCategorysController = new UpdateCategorysController();
 const deleteCategoryController = new DeleteCategoryController();
 const showOneCategorysController = new ShowOneCategorysController();
-// categoriesRouter.get('/', (req: Request, res: Response) => {
-//   return res.json({
-//     message: 'Tudo deu certo'
-//   })
-// });
 
 categoriesRouter.post('/', createCategoryController.execute);
 categoriesRouter.get('/', showCategorysController.execute);

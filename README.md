@@ -83,6 +83,188 @@ Desenvolver uma API RESTfull utilizando nodejs e banco de dados relaciona. Cada 
 - [x] A listagem deve ter a possibilidade de ordenação dos campos e com uma paginação
       de 10 produtos por página.
 
+### Rotas da Aplicação
+
+#### Users
+
+1 - http://localhost:4444/api/v1/users
+
+Post
+Body(Json)
+
+```
+{
+	"name": "",
+	"email": "",
+	"password": ""
+}
+```
+
+Post
+2 - http://localhost:4444/api/v1/sessions
+
+Body(Json)
+
+```
+{
+	"email": "",
+	"password": ""
+}
+```
+
+#### Categories
+
+3 - http://localhost:4444/api/v1/categories
+
+Post
+Body(Json)
+
+```
+{
+	"name": "Açougue",
+	"description": "Descrição Generica para teste"
+}
+```
+
+4 - http://localhost:4444/api/v1/categories
+
+Get
+No Body
+
+```
+{
+
+}
+```
+
+5 - http://localhost:4444/api/v1/categories/:id
+
+Get
+Params
+No Body
+
+```
+{
+
+}
+```
+
+5 - http://localhost:4444/api/v1/categories
+
+Patch
+Body(Json)
+
+```
+{
+	"id": "",
+	"name": "",
+	"description": "",
+	"slug": ""
+}
+```
+
+6 - http://localhost:4444/api/v1/categories/:id
+
+Delete
+Params
+No Body
+
+```
+{
+
+}
+```
+
+#### Products
+
+7 - http://localhost:4444/api/v1/products
+
+Post
+
+Body(Json)
+
+```
+{
+	"categoryId": ,
+  "name": "Lençol de Cama Embrulhadinho",
+  "manufacturingDate": "2021-08-15T18:52:12.927Z",
+  "perishableProduct": false,
+  "expirationDate": "2021-08-15T18:52:12.927Z",
+  "price": ,
+}
+```
+
+8 - http://localhost:4444/api/v1/products/:id
+
+Get
+Params
+No Body
+
+```
+{
+
+}
+```
+
+9 - http://localhost:4444/api/v1/products/category/:id
+
+Get
+Params
+No Body
+
+```
+{
+
+}
+```
+
+10 - http://localhost:4444/api/v1/products
+
+Get
+No Body
+
+```
+{
+
+}
+```
+
+11 - http://localhost:4444/api/v1/products/:id
+
+Delete
+Params
+No Body
+
+```
+{
+
+}
+```
+
+12 - http://localhost:4444/api/v1/products/image/:id
+
+Patch
+Params
+Body(Multipart)
+
+```
+{
+productImage: file
+}
+```
+
+13 - http://localhost:4444/api/v1/products/:id
+
+Get
+Params
+No Body
+
+```
+{
+
+}
+```
+
 ### Diferenciais
 
 - [ ] Utilizar testes unitários e de integração;
