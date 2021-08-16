@@ -15,7 +15,7 @@ export class ProductsRepository implements IProductsRepository {
   }
 
   async index(page: number = 1): Promise<Product[] | IProductArrayDTO> {
-    const totalRecordsPerPage = 5;
+    const totalRecordsPerPage = 20;
     const totalRecords = await this.product.count();
     const totalPages = Math.round(totalRecords / totalRecordsPerPage);
 
