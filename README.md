@@ -110,7 +110,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/jnerydesigner/gen_products_api
+$ git clone https://github.com/jnerydesigner/challenge-database-user gen_products_api
 
 # Access
 $ cd gen_products_api
@@ -149,6 +149,8 @@ This project is under license from MIT. For more details, see the [LICENSE](LICE
 
 Made with :heart: by <a href="https://github.com/jnerydesigner" target="_blank">Jander Nery</a>
 
-&#xa0;
+> Fiquei muito interessado em trabalhar nessa Empresa.
 
-<a href="#top">Back to top</a>
+[Meu Linkedin](https://www.linkedin.com/in/jander-nery/)
+
+[Meu Github](https://github.com/jnerydesigner)
